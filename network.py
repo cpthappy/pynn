@@ -59,7 +59,7 @@ class NeuralNetwork(object):
                        (1.0 - hidden_outputs)), numpy.transpose(inputs))
 
     def _query_internal(self, inputs):
-       
+
         hidden_inputs = numpy.dot(self.wih, inputs)
         hidden_outputs = self.activation_function(hidden_inputs)
 
@@ -69,8 +69,8 @@ class NeuralNetwork(object):
         return final_outputs, hidden_outputs
 
     def query(self, inputs_list):
-         inputs = numpy.array(inputs_list, ndmin=2).T
-         return self._query_internal(inputs)[0]
+        inputs = numpy.array(inputs_list, ndmin=2).T
+        return self._query_internal(inputs)[0]
 
 
 if __name__ == '__main__':

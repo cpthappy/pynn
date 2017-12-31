@@ -1,6 +1,6 @@
 import csv
-import numpy
 import os
+import numpy
 import network
 
 
@@ -33,7 +33,7 @@ def test_model(uut, test_data):
     count = sum([uut.query(entry).argmax() == label for label, entry in test_data])
     return 1.0*count/len(test_data)
 
-if __name__ == '__main__':
+def main():
     TRAIN_DATA = read_dataset(os.path.join("data", "mnist_train_100.csv"))
     TRAIN_DATA = scale_dataset(TRAIN_DATA, 255.0)
     TEST_DATA = read_dataset(os.path.join("data", "mnist_test_10.csv"))
@@ -41,4 +41,7 @@ if __name__ == '__main__':
     NETWORK = network.NeuralNetwork(784, 200, 10, 0.3)
     train_model(NETWORK, TRAIN_DATA)
     print test_model(NETWORK, TEST_DATA)
+
+if __name__ == '__main__':
+   main()
    
