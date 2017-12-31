@@ -75,4 +75,5 @@ class NeuralNetwork(object):
 
 if __name__ == '__main__':
     NETWORK = NeuralNetwork(3, 3, 3, 0.3)
-    print NETWORK.query([3.0, 2.1, -3])
+    # print NETWORK.query([3.0, 2.1, -3])
+    NETWORK.train([1,2,3], [1,1,1])
